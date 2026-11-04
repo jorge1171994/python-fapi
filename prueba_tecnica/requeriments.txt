@@ -1,0 +1,8 @@
+package=(fastapi,
+uvicorn[standard],
+pydantic,
+sqlalchemy)
+
+create virtual env: Python -m venv venv
+install required package: (above)
+to start use: uvicorn main:app --reload
