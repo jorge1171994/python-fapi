@@ -9,6 +9,9 @@ class ContactRepository:
     def get_by_email(db: Session, email: str):
         return (db.query(Contact).filter(Contact.email == email).first())
     @staticmethod
+    def get_all(db: Session, skip: int = 0, limit =10):
+        return (db.query(Contact).filter(Contact.is_active == True).offset(skip).limit(limit).all())
+    @staticmethod
     def save(db: Session, contact: Contact):
         db.add(contact)
         db.commit()
