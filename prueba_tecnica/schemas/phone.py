@@ -11,9 +11,8 @@ class PhoneData(BaseModel):
         from_attributes = True
 
 class PhoneResponse(BaseModel):
-    id: int
-    number: str
     type: str
+    phone: PhoneData
 
     class Config: 
         from_attributes = True
